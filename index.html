@@ -62,11 +62,11 @@
                 <span class="section-label">Identity</span>
                 <div class="profile-hero">
                     <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
-                        <div class="profile-avatar-zoom"></div>
-                        <div>
-                            <h2 style="font-size: 1.8rem;">ドデカゴン</h2>
-                            <p style="color: var(--accent-secondary); font-weight: 600;" id="ageDisplay">17歳 (2008.08.07生まれ)</p>
-                        </div>
+                    <div class="profile-avatar-zoom"></div>
+                    <div>
+                        <h2 style="font-size: 1.8rem;">ドデカゴン</h2>
+                        <p style="color: var(--accent-secondary); font-weight: 600;" id="ageDisplay">18歳 (2008.08.07生まれ)</p>
+                    </div>
                     </div>
                     <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.8;">
                         高校生プログラマー。個人開発で「本当に使えるツール」を追求しています。AIを活用した副業実験や勉強の効率化など、自らの経験を元にリリース。
@@ -115,55 +115,65 @@
                 </div>
             </section>
 
-            <!-- Xニュース (プレミアム・カスタムフィード) -->
-            <!-- 注：公式ウィジェットは環境により画像が表示されないことが多いため、最高画質のカスタムカードを採用しています -->
+            <!-- Xニュース (プレミアム・ハイブリッド) -->
             <section id="x-feed">
-                <span class="section-label">Latest Insights on X</span>
-                <div style="display: grid; gap: 32px;">
-                    
-                    <!-- Latest Post (Mar 23) -->
-                    <div class="x-card">
-                        <div class="x-card-header">
-                            <div class="profile-avatar-zoom" style="width: 40px; height: 40px; border-radius: 10px;"></div>
-                            <div style="flex: 1; margin-left: 12px;">
-                                <div style="font-weight: 800; font-size: 0.9rem;">ドデカゴン <i class="fas fa-check-circle" style="color: var(--accent-secondary); font-size: 0.8rem;"></i></div>
-                                <div style="color: var(--text-muted); font-size: 0.75rem;">@dodecagenshin12</div>
-                            </div>
-                            <i class="fab fa-x-twitter" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                        </div>
-                        <div class="x-card-body">
-                            <p>Qwen君、中国語混じり大問題だったけど...ついに解決した！！！？ プロンプトに「日本語以外の言語を入れたら爆発するよ！！」って書いてみたら、めちゃくちゃ抑制できた...！！</p>
-                            <div class="x-card-media">
-                                <img src="https://pbs.twimg.com/media/HEF3Ymkb0AAJLrP?format=png&name=large" alt="Post content">
-                            </div>
-                        </div>
-                        <div class="x-card-footer">
-                            <span>20:18 · 2026/03/23</span>
-                            <a href="https://x.com/dodecagenshin12/status/2036039867961115027" target="_blank" class="x-view-link">View on X</a>
-                        </div>
-                    </div>
+                <span class="section-label">Live Insights on X</span>
+                
+                <!-- 1. 自動更新ウィジェット (成功すれば表示) -->
+                <div id="x-timeline-mount" style="margin-bottom: 32px; border-radius: 24px; overflow: hidden; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); display: none;">
+                    <!-- JSで動的に追加されます -->
+                </div>
 
-                    <!-- Previous Post (Mar 22) -->
-                    <div class="x-card">
-                        <div class="x-card-header">
-                            <div class="profile-avatar-zoom" style="width: 40px; height: 40px; border-radius: 10px;"></div>
-                            <div style="flex: 1; margin-left: 12px;">
-                                <div style="font-weight: 800; font-size: 0.9rem;">ドデカゴン <i class="fas fa-check-circle" style="color: var(--accent-secondary); font-size: 0.8rem;"></i></div>
-                                <div style="color: var(--text-muted); font-size: 0.75rem;">@dodecagenshin12</div>
+                <!-- 2. カスタム・バックアップフィード (全体をタップ可能に) -->
+                <div id="x-manual-fallback" style="display: grid; gap: 32px;">
+                    
+                    <!-- Latest Post -->
+                    <a href="https://x.com/dodecagenshin12/status/2036039867961115027" target="_blank" class="x-card-link">
+                        <div class="x-card">
+                            <div class="x-card-header">
+                                <div class="profile-avatar-zoom" style="width: 40px; height: 40px; border-radius: 10px;"></div>
+                                <div style="flex: 1; margin-left: 12px;">
+                                    <div style="font-weight: 800; font-size: 0.9rem;">ドデカゴン <i class="fas fa-check-circle" style="color: var(--accent-secondary); font-size: 0.8rem;"></i></div>
+                                    <div style="color: var(--text-muted); font-size: 0.75rem;">@dodecagenshin12</div>
+                                </div>
+                                <i class="fab fa-x-twitter" style="font-size: 1.2rem; color: var(--text-muted);"></i>
                             </div>
-                            <i class="fab fa-x-twitter" style="font-size: 1.2rem; color: var(--text-muted);"></i>
-                        </div>
-                        <div class="x-card-body">
-                            <p>ローカルLLMに「宇宙の果てのカフェでブラックホールを眺めながらコーヒー飲む猫」描かせてみたんだけど... 大惨事すぎて笑った！！！ 最初は年齢もバッチリ覚えてて...</p>
-                            <div class="x-card-media">
-                                <img src="https://pbs.twimg.com/media/HEAsk9PbcAAWu1N?format=jpg&name=large" alt="Post content">
+                            <div class="x-card-body">
+                                <p>Qwen君、中国語混じり大問題だったけど...ついに解決した！！！？ プロンプトに「日本語以外の言語を入れたら爆発するよ！！」って書いてみたら、めちゃくちゃ抑制できた...！！</p>
+                                <div class="x-card-media">
+                                    <img src="https://pbs.twimg.com/media/HEF3Ymkb0AAJLrP?format=png&name=large" alt="Post content">
+                                </div>
+                            </div>
+                            <div class="x-card-footer">
+                                <span>20:18 · 2026/03/23</span>
+                                <span class="x-view-link">Tap to View <i class="fas fa-external-link-alt"></i></span>
                             </div>
                         </div>
-                        <div class="x-card-footer">
-                            <span>20:13 · 2026/03/22</span>
-                            <a href="https://x.com/dodecagenshin12/status/2035676246240321695" target="_blank" class="x-view-link">View on X</a>
+                    </a>
+
+                    <!-- Previous Post -->
+                    <a href="https://x.com/dodecagenshin12/status/2035676246240321695" target="_blank" class="x-card-link">
+                        <div class="x-card">
+                            <div class="x-card-header">
+                                <div class="profile-avatar-zoom" style="width: 40px; height: 40px; border-radius: 10px;"></div>
+                                <div style="flex: 1; margin-left: 12px;">
+                                    <div style="font-weight: 800; font-size: 0.9rem;">ドデカゴン <i class="fas fa-check-circle" style="color: var(--accent-secondary); font-size: 0.8rem;"></i></div>
+                                    <div style="color: var(--text-muted); font-size: 0.75rem;">@dodecagenshin12</div>
+                                </div>
+                                <i class="fab fa-x-twitter" style="font-size: 1.2rem; color: var(--text-muted);"></i>
+                            </div>
+                            <div class="x-card-body">
+                                <p>ローカルLLMに「宇宙の果てのカフェでブラックホールを眺めながらコーヒー飲む猫」描かせてみたんだけど... 大惨事すぎて笑った！！！</p>
+                                <div class="x-card-media">
+                                    <img src="https://pbs.twimg.com/media/HEAsk9PbcAAWu1N?format=jpg&name=large" alt="Post content">
+                                </div>
+                            </div>
+                            <div class="x-card-footer">
+                                <span>20:13 · 2026/03/22</span>
+                                <span class="x-view-link">Tap to View <i class="fas fa-external-link-alt"></i></span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                 </div>
             </section>
@@ -219,8 +229,44 @@
 
     </div>
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
+        // X Widget Initialization (Programmatic approach for stability)
+        window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+            return t;
+        }(document, "script", "twitter-wjs"));
+
+        twttr.ready(function(twttr) {
+            twttr.widgets.createTimeline(
+                {
+                    sourceType: "profile",
+                    screenName: "dodecagenshin12"
+                },
+                document.getElementById("x-timeline-mount"),
+                {
+                    height: 600,
+                    theme: "dark",
+                    chrome: "transparent noheader nofooter noborders"
+                }
+            ).then(function (el) {
+                if (el) {
+                    document.getElementById("x-timeline-mount").style.display = "block";
+                    // If widget loads, we can optionally hide manual ones, but keeping both for now
+                    // document.getElementById("x-manual-fallback").style.display = "none";
+                }
+            });
+        });
+
         // Age Calculation
         function calculateAge(birthDate) {
             const today = new Date();
