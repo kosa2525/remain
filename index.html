@@ -62,7 +62,7 @@
                 <span class="section-label">Identity</span>
                 <div class="profile-hero">
                     <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">👨‍💻</div>
+                        <div class="profile-avatar-zoom"></div>
                         <div>
                             <h2 style="font-size: 1.8rem;">ドデカゴン</h2>
                             <p style="color: var(--accent-secondary); font-weight: 600;" id="ageDisplay">17歳 (2008.08.07生まれ)</p>
@@ -110,7 +110,8 @@
             <section id="youtube">
                 <span class="section-label">Latest Video</span>
                 <div style="background: var(--card-bg); border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 9/16; max-width: 340px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/h6yDQjJWULs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- チャンネルの最新動画リストを埋め込み（自動更新対応） -->
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=UUdKSA2Fk7Nk-dvV7k6S8zCQ" title="YouTube latest video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </section>
 

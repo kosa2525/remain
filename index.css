@@ -285,6 +285,25 @@ section.visible {
     padding: 32px;
 }
 
+.profile-avatar-zoom {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background-image: url('assets/img/avatar.jpg');
+    background-size: 400%; /* Zoom into the center character */
+    background-position: center 48%; 
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.x-timeline-container {
+    background: #000;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    min-height: 500px;
+}
+
 /* Hamburger Fix (Mobile Only) */
 .mobile-nav-toggle {
     display: none;
