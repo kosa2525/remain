@@ -32,6 +32,7 @@
                 <a href="#hero" class="active">Top</a>
                 <a href="#profile">Profile</a>
                 <a href="#products">Project</a>
+                <a href="#youtube">YouTube</a>
                 <a href="#x-feed">News</a>
                 <a href="#history">Timeline</a>
             </nav>
@@ -105,12 +106,19 @@
                 </div>
             </section>
 
+            <!-- 最新動画 -->
+            <section id="youtube">
+                <span class="section-label">Latest Video</span>
+                <div style="background: var(--card-bg); border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); aspect-ratio: 9/16; max-width: 340px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/h6yDQjJWULs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </section>
+
             <!-- Xニュース -->
             <section id="x-feed">
                 <span class="section-label">X Feed</span>
-                <div class="x-timeline-container" style="background: var(--card-bg); border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border);">
-                    <a class="twitter-timeline" data-height="600" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/dodecagenshin12?ref_src=twsrc%5Etfw">Tweets by dodecagenshin12</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div class="x-timeline-container" style="background: #000; border-radius: 24px; overflow: hidden; border: 1px solid var(--glass-border); min-height: 500px;">
+                    <a class="twitter-timeline" data-height="600" data-theme="dark" href="https://twitter.com/dodecagenshin12?ref_src=twsrc%5Etfw">Tweets by dodecagenshin12</a>
                 </div>
             </section>
 
@@ -165,6 +173,7 @@
 
     </div>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
         // Age Calculation
         function calculateAge(birthDate) {
