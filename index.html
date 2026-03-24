@@ -115,22 +115,20 @@
                 </div>
             </section>
 
-            <!-- Xニュース (完全自動・公式ウィジェット) -->
+            <!-- Xニュース (自動更新・iframe直接埋め込み方式) -->
+            <!-- widgets.jsを使わず、syndication.twitter.comのiframeを直接埋め込み -->
+            <!-- これによりスクリプトブロックを完全に回避し、自動更新を実現 -->
             <section id="x-feed">
                 <span class="section-label">Live Feed on X</span>
                 
-                <div id="x-widget-container" style="min-height: 400px; background: rgba(0,0,0,0.4); border-radius: 24px; border: 1px solid var(--glass-border); overflow: visible !important;">
-                    <p id="x-loading-hint" style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem;">
-                        <i class="fas fa-spinner fa-spin"></i> Xタイムラインを読み込み中...<br>
-                        <span style="font-size: 0.7rem;">(表示されない場合は広告ブロック等の設定をご確認ください)</span>
-                    </p>
-                    <a class="twitter-timeline" 
-                       data-lang="ja" 
-                       data-theme="dark" 
-                       data-height="600" 
-                       href="https://twitter.com/dodecagenshin12?ref_src=twsrc%5Etfw">
-                        Tweets by dodecagenshin12
-                    </a>
+                <div style="background: rgba(0,0,0,0.3); border-radius: 24px; border: 1px solid var(--glass-border); overflow: hidden;">
+                    <iframe 
+                        src="https://syndication.twitter.com/srv/timeline-profile/screen-name/dodecagenshin12?dnt=false&embedId=twitter-widget-0&frame=false&hideBorder=true&hideFooter=true&hideHeader=true&hideScrollBar=false&lang=ja&maxHeight=600px&theme=dark&transparent=true" 
+                        style="width: 100%; height: 600px; border: none; display: block;" 
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                        loading="lazy"
+                        title="X Timeline">
+                    </iframe>
                 </div>
             </section>
 
@@ -185,22 +183,7 @@
 
     </div>
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
-        // X Widget Observer: Hide loading hint when widget appears
-        document.addEventListener('DOMContentLoaded', () => {
-            const checkExist = setInterval(() => {
-                const widget = document.querySelector('.twitter-timeline-rendered');
-                if (widget) {
-                    document.getElementById('x-loading-hint').style.display = 'none';
-                    clearInterval(checkExist);
-                }
-            }, 500);
-            
-            // Timeout after 10s
-            setTimeout(() => clearInterval(checkExist), 10000);
-        });
-
         // Age Calculation
         function calculateAge(birthDate) {
             const today = new Date();
